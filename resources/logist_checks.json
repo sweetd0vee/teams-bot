@@ -1,0 +1,87 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Чекер логистики",
+            "horizontalAlignment": "Center",
+            "fontType": "Default",
+            "weight": "Bolder",
+            "size": "large"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Введите месяца, за которые хотите выполнить проверку логистики",
+            "fontType": "Default",
+            "size": "Medium",
+            "weight": "Bolder"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Формат ввода - год месяц, через запятую",
+            "wrap": true,
+            "color": "Default",
+            "size": "Default",
+            "isSubtle": true
+        },
+        {
+            "type": "Input.Text",
+            "id": "months",
+            "placeholder": "202112, 202201, 202111"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Выберите версии для проверки",
+            "fontType": "Default",
+            "size": "Medium",
+            "weight": "Bolder"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Список доступных версий:",
+            "isSubtle": true
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "choices": [
+                {
+                    "title": "Estimation",
+                    "value": "1"
+                },
+                {
+                    "title": "KPI",
+                    "value": "2"
+                },
+                {
+                    "title": "Fact",
+                    "value": "3"
+                }
+            ],
+            "placeholder": "Список доступных версий:",
+            "isMultiSelect": true,
+            "id": "versions",
+            "style": "expanded"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit",
+                    "data": {
+                        "submit": "submit",
+                        "input": true,
+                        "command_id": "logist_checks"
+                    },
+                    "style": "positive"
+                }
+            ]
+        }
+    ]
+}

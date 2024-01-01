@@ -1,0 +1,87 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Узнать редко используемые таблицы",
+            "horizontalAlignment": "Center",
+            "fontType": "Default",
+            "weight": "Bolder",
+            "size": "large"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Выберите железные шарды, для которых хотите узнать информацию по неиспользуемым на них таблицам",
+            "wrap": true,
+            "size": "Medium"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Список доступных шардов:",
+            "isSubtle": true
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "choices": [
+                {
+                    "title": "IRON 1",
+                    "value": "1"
+                },
+                {
+                    "title": "IRON 2",
+                    "value": "2"
+                },
+                {
+                    "title": "IRON 3",
+                    "value": "3"
+                },
+                {
+                    "title": "IRON 4",
+                    "value": "4"
+                },
+                {
+                    "title": "IRON 5",
+                    "value": "5"
+                },
+                {
+                    "title": "IRON 6",
+                    "value": "6"
+                }
+            ],
+            "placeholder": "Список доступных шардов:",
+            "isMultiSelect": true,
+            "id": "shards"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Укажите дату начала, с которой не использовались таблицы",
+            "isSubtle": true
+        },
+        {
+            "type": "Input.Date",
+            "id": "start_date",
+            "placeholder": "Выберите дату"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit",
+                    "style": "positive",
+                    "data": {
+                        "submit": "submit",
+                        "input": true,
+                        "command_id": "get_useless_tables"
+                    }
+                }
+            ],
+            "id": "Submit"
+        }
+    ]
+}

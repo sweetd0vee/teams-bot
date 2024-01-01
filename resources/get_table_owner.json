@@ -1,0 +1,94 @@
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Узнать владельца и дату создания таблицы",
+            "horizontalAlignment": "Center",
+            "fontType": "Default",
+            "weight": "Bolder",
+            "size": "large"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Заполните информацию по таблице, создателя которой хотели бы узнать",
+            "size": "Medium",
+            "color": "Default"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Выберите хост:"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "choices": [
+                {
+                    "title": "CLOUD 1",
+                    "value": "CLOUD 1"
+                },
+                {
+                    "title": "CLOUD 2",
+                    "value": "CLOUD 2"
+                },
+                {
+                    "title": "IRON 1",
+                    "value": "IRON 1"
+                },
+                {
+                    "title": "IRON 2",
+                    "value": "IRON 2"
+                },
+                {
+                    "title": "IRON 3",
+                    "value": "IRON 3"
+                },
+                {
+                    "title": "IRON 4",
+                    "value": "IRON 4"
+                },
+                {
+                    "title": "IRON 5",
+                    "value": "IRON 5"
+                },
+                {
+                    "title": "IRON 6",
+                    "value": "IRON 6"
+                }
+            ],
+            "placeholder": "Список доступных хостов:",
+            "isMultiSelect" : false,            
+            "id": "host"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Введите название таблицы в формате: база_данных.название_таблица"
+        },
+        {
+            "type": "Input.Text",
+            "placeholder": "Пример: DP_Analytics.Calc3_MP_id_new",
+            "id": "table"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit",
+                    "data": {
+                        "input" : true,
+                        "submit": "submit",
+                        "command_id": "get_table_owner"
+                    },
+                    "style": "positive"
+                }
+            ],
+            "id": "Submit"
+        }
+    ]
+}

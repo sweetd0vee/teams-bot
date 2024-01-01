@@ -1,0 +1,32 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Загрузка малышек",
+            "horizontalAlignment": "Center",
+            "fontType": "Default",
+            "weight": "Bolder",
+            "size": "large"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Отправьте файл с малышками, которые хотите загрузить в базу",
+            "fontType": "Default",
+            "size": "Medium",
+            "weight": "Bolder"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Прикрепленный файл должен иметь расширение .csv",
+            "wrap": true,
+            "color": "Default",
+            "size": "Default",
+            "isSubtle": true
+        }
+    ]
+}

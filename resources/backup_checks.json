@@ -1,0 +1,69 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Сравнить бэкапы Calc3_MP_id_new",
+            "horizontalAlignment": "Center",
+            "fontType": "Default",
+            "weight": "Bolder",
+            "size": "large"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Выберите даты, от которых будут сравниваться данные",
+            "wrap": true,
+            "size": "Medium"
+        },
+        {
+            "type": "Input.Date",
+            "id": "date_first",
+            "placeholder": "Выберите дату"
+        },
+        {
+            "type": "Input.Date",
+            "id": "date_second",
+            "placeholder": "Выберите дату"
+        },
+        {
+            "type": "TextBlock",
+            "wrap": true,
+            "text": "Введите месяца, за которые хотите сравить значения метрик",
+            "fontType": "Default",
+            "size": "Medium",
+            "weight": "Bolder"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Формат ввода - год месяц, через запятую, для проверки по всем месяцам введите значение: 'all'",
+            "wrap": true,
+            "color": "Default",
+            "size": "Default",
+            "isSubtle": true
+        },
+        {
+            "type": "Input.Text",
+            "id": "months",
+            "placeholder": "202112, 202201, 202111"
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Submit",
+                    "style": "positive",
+                    "data": {
+                        "submit": "submit",
+                        "input": true,
+                        "command_id": "backup_checks"
+                    }
+                }
+            ],
+            "id": "Submit"
+        }
+    ]
+}

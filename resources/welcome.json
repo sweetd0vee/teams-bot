@@ -1,0 +1,220 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "large",
+            "weight": "Bolder",
+            "text": "Привет, я MalushkaBot!"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Можешь выбрать команду, которую хочешь выполнить. \nДоступные функции:\r\n",
+            "wrap": true,
+            "size": "Default"
+        },
+
+
+        {
+            "type": "TextBlock",
+            "text": "Малышки",
+            "wrap": true,
+            "size": "medium",
+            "weight": "bolder",
+            "horizontalAlignment": "center"
+        },
+        {
+            "type": "ActionSet",
+            "id": "malushka_commands",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Узнать количество пустых малышек",
+                    "data": {
+                        "command_id": "count_mal",
+                        "input": false
+                    },
+                    "associatedInputs": "auto"
+                },
+                {
+                    "type": "Action.Submit",
+                    "title": "Все малышки за определенный период",
+                    "data": {
+                        "command_id": "malushka_all",
+                        "input": false
+                    },
+                    "associatedInputs": "auto"
+                },
+                {
+                    "type": "Action.Submit",
+                    "title": "Категории без малышек за определеный период",
+                    "data": {
+                        "command_id": "malushka_csv",
+                        "input": false
+                    },
+                    "associatedInputs": "auto"
+                },
+                {
+                    "type": "Action.Submit",
+                    "title": "Загрузить малышек",
+                    "data": {
+                        "command_id": "malushka_upload_file",
+                        "input": false
+                    },
+                    "associatedInputs": "auto"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "\n",
+            "wrap": true,
+            "size": "small",
+            "weight": "bolder",
+            "horizontalAlignment": "center"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Информация по таблицам",
+            "wrap": true,
+            "size": "medium",
+            "weight": "bolder",
+            "horizontalAlignment": "center"
+        },
+        {
+            "type": "ActionSet",
+            "id": "db_commands",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Узнать владельца и дату создания таблицы",
+                    "data": {
+                        "command_id": "get_table_owner",
+                        "input": false
+                    },
+                    "associatedInputs": "auto"
+                },
+                {
+                    "type": "Action.Submit",
+                    "title": "Узнать все таблицы хоста",
+                    "data": {
+                        "command_id": "get_all_shard_tables",
+                        "input": false
+                    },
+                    "associatedInputs": "auto"
+                },
+                {
+                    "type": "Action.Submit",
+                    "title": "Таблицы, созданные, начиная с определенной даты",
+                    "data": {
+                        "command_id": "get_shard_tables",
+                        "input": false
+                    },
+                    "associatedInputs": "auto"
+                },
+                {
+                    "type": "Action.Submit",
+                    "title": "Неиспользуемые таблицы",
+                    "data": {
+                        "command_id": "get_useless_tables",
+                        "input": false
+                    },
+                    "associatedInputs": "auto"
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "\n",
+            "wrap": true,
+            "size": "small",
+            "weight": "bolder",
+            "horizontalAlignment": "center"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Выгрузка актуальных данных",
+            "wrap": true,
+            "size": "medium",
+            "weight": "bolder",
+            "horizontalAlignment": "center"
+        },
+        {
+            "type": "ActionSet",
+            "id": "load_data_commands",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Актуальные std_cost_fbs",
+                    "data": {
+                        "command_id": "cost_fbs",
+                        "input": true
+                    },
+                    "associatedInputs": "auto"
+                },
+                {
+                    "type": "Action.Submit",
+                    "title": "Актуальные tariffs_matrix",
+                    "data": {
+                        "command_id": "tariffs_matrix",
+                        "input": true
+                    },
+                    "associatedInputs": "auto"
+                }
+            ],
+            "height": "auto"
+        },
+        {
+            "type": "TextBlock",
+            "text": "\n",
+            "wrap": true,
+            "size": "small",
+            "weight": "bolder",
+            "horizontalAlignment": "center"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Чекеры",
+            "wrap": true,
+            "size": "medium",
+            "weight": "bolder",
+            "horizontalAlignment": "center"
+        },
+        {
+            "type": "ActionSet",
+            "id": "checks",
+            "actions": [
+            {
+                "type": "Action.Submit",
+                "title": "Чекер тарифф матрицы",
+                "data": {
+                    "command_id": "tariffs_matrix_checks",
+                    "input": false
+                },
+                "associatedInputs": "auto"
+            },
+            {
+                "type": "Action.Submit",
+                "title": "Чекер логистики",
+                "data": {
+                    "command_id": "logist_checks",
+                    "input": false
+                },
+                "associatedInputs": "auto"
+            },
+            {
+                "type": "Action.Submit",
+                "title": "Чекер коммерции",
+                "data": {
+                    "command_id": "commerce_checks",
+                    "input": false
+                },
+                "associatedInputs": "auto"
+            }
+            ],
+            "height": "auto"
+        }
+    ]
+}
